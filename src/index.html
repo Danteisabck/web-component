@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<autocomplete-input></autocomplete-input>
+<date-picker></date-picker>
+<destination-date-display></destination-date-display>
+
+<script src="/bundle.js"></script>
+<script>
+    const datePicker = document.querySelector('date-picker');
+    const autocompleteInput = document.querySelector('autocomplete-input');
+    const destinationDateDisplay = document.querySelector('destination-date-display');
+
+    datePicker.addEventListener('dateSelected', (event) => {
+        const chosenDate = event.detail;
+        console.log(`Chosen date: ${chosenDate}`);
+        destinationDateDisplay.setDate(chosenDate);
+    });
+
+    autocompleteInput.addEventListener('destinationSelected', (event) => {
+        const chosenDestination = event.detail;
+        destinationDateDisplay.setDestination(chosenDestination);
+    });
+</script>
+</body>
+</html>
