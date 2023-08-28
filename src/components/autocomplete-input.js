@@ -12,13 +12,13 @@ class AutocompleteInput extends HTMLElement {
                 :host {
                     display: block;
                     width: 700px;
+                    margin-bottom: 20px;
                 }
                 
                 .input-container {
                     display: flex;
                     align-items: center;
                     border-bottom: 2px solid #67c5f0;
-                    margin-bottom: 20px;
                 }
 
                 input {
